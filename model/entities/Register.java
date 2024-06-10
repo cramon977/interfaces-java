@@ -37,6 +37,6 @@ public class Register {
 
 	@Override
 	public String toString() {
-		return fmt.format(portionDate) + " "+ portionValue;
+		return fmt.format(portionDate) + " - R$ "+ String.format("%.2f", portionValue);
 	}
 }

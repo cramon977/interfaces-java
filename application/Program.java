@@ -20,13 +20,13 @@ public class Program {
 		
 		
 		System.out.print("Enter with contract number : ");
-		int contract = sc.nextInt();
+		int contractNumber = sc.nextInt();
 		System.out.print("Enter with cantract date (dd/MM/yyyy): ");
 		LocalDate date =  LocalDate.parse(sc.next(), fmt);
 		System.out.print("Enter with total value contract: ");
 		double value = sc.nextDouble();
 		
-		Contract con = new Contract(contract, date, value );
+		Contract contract = new Contract(contractNumber, date, value );
 		
 		
 		System.out.print("How many months do you want to pay in installments? ");
@@ -34,7 +34,7 @@ public class Program {
 		
 		Installment inst = new Installment( portion, new PaypalTax());
 		
-		inst.installment(con);
+		inst.installment(contract);
 		
 		System.out.println("Portions:");
 		
