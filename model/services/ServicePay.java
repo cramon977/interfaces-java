@@ -1,6 +1,6 @@
 package model.services;
 
-public interface ServicePay {
+public interface TaxService {
 	
 	Double taxPay(double value, int portion);
 }
