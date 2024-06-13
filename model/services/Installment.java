@@ -11,13 +11,13 @@ import model.entities.Register;
 public class Installment {
 		
 	private Integer portionNumber;
-	private ServicePay servicePay;
+	private TaxService taxService;
 	
 	public List<Register> list = new ArrayList<>();
 
-	public Installment(Integer portion, ServicePay servicePay) {
+	public Installment(Integer portion, TaxService taxService) {
 		this.portionNumber = portion;
-		this.servicePay = servicePay;
+		this.taxService = taxService;
 	}
 
 	public Integer getPortion() {
@@ -35,7 +35,7 @@ public class Installment {
 		
 		for(int i = 1; i<=this.portionNumber; i++) {
 		
-			double portionTax = servicePay.taxPay(portionValue, i);
+			double portionTax = taxService.taxPay(portionValue, i);
 			LocalDate portionDate = contract.getContractDate().plusMonths(i);
 			
 			contract.setRegister(new Register(portionDate, portionTax));
