@@ -35,7 +35,7 @@ public class Installment {
 		
 		for(int i = 1; i<=this.portionNumber; i++) {
 		
-			double portionTax = taxService.taxPay(portionValue, i);
+			double portionTax = taxService.applyTaxes(portionValue, i);
 			LocalDate portionDate = contract.getContractDate().plusMonths(i);
 			
 			contract.setRegister(new Register(portionDate, portionTax));
